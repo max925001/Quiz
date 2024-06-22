@@ -67,12 +67,12 @@ const Quiz = () => {
       ) : (
         <form onSubmit={handleSubmit}>
           {questionsList.map((question, index) => (
-            <div key={index} className="p-3 m-4 border-4 border-black-500 rounded">
-              <h3 className="text-lg font-semibold">{question.Question}</h3>
+            <div key={index} className="  p-3 m-4 border-4 border-black-500 rounded overflow-x-scroll ">
+              <h3 className="  text-lg  font-semibold w-full  ">{question.Question}</h3>
               {Object.keys(question.Options).map((optionKey) => (
                 <div
                   key={optionKey}
-                  className={`p-2 rounded 
+                  className={`p-2 rounded w-full 
                     ${showReview && question.correctionOption === optionKey ? 'bg-green-200' : ''}
                     ${showReview && userAnswers[index] === optionKey && userAnswers[index] !== question.correctionOption ? 'bg-red-200' : ''}
                   `}
